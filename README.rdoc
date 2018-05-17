@@ -1,7 +1,9 @@
 = workflow_graph
 is a redmine plugin to visualize workflow.
 
+This plugin inspired by redmine_workflow_viz.
+
 = Installation
-1. $ cd REDMINE_ROOT
-2. $ ruby script/plugin install git://github.com/chiyama/workflow_graph.git
+1. $ cd REDMINE_ROOT/plugin
+2. $ git clone git://github.com/chiyama/workflow_graph.git
 
