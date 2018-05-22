@@ -1,9 +1,9 @@
 %= render :partial => 'action_menu' %>
 
 <%= content_for :header_tags do %>
-<%= stylesheet_link_tag 'graph.css', :plugin => 'redmine_workflow_viz', :media => 'all' %>
-<%= javascript_include_tag 'cytoscape.min.js', :plugin => 'redmine_workflow_viz' %>
-<%= javascript_include_tag 'graph.js', :plugin => 'redmine_workflow_viz' %>
+<%= stylesheet_link_tag 'graph.css', :plugin => 'workflow_graph', :media => 'all' %>
+<%= javascript_include_tag 'cytoscape.min.js', :plugin => 'workflow_graph' %>
+<%= javascript_include_tag 'graph.js', :plugin => 'workflow_graph' %>
 <% end %>
 
 <%= title l(:label_workflow) %>
