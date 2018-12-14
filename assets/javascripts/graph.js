@@ -1,11 +1,17 @@
 var getStatusNames = function() {
-    names = ['New issue'];
-
-    thead = document.getElementById('workflow_form').getElementsByTagName('table')[0].getElementsByTagName('thead')[0];
-    tds = thead.getElementsByTagName('td');
-    for (var i = 1; i < tds.length; i++) {
-        td = tds[i];
-        names.push(td.innerText)
+    var names = [];
+    var tbody = document.getElementById('workflow_form').getElementsByTagName('table')[0].getElementsByTagName('tbody')[0];
+    var trs = tbody.getElementsByTagName('tr');
+    for (var i = 0; i < trs.length; i++) {
+        var td = trs[i].getElementsByTagName('td')[0];
+        var ems = td.getElementsByTagName('em');
+                var text = '';
+                if(ems.length != 0){
+                        text = ems[0].innerText;
+                } else {
+                        text = td.innerText;
+                }
+        names.push(text);
     }
 
     return names;
@@ -87,7 +93,7 @@ var updateGraph = function(names) {
 
     cy = cytoscape({
         container: document.getElementById('cy'),
-    	boxSelectionEnabled: true,
+        boxSelectionEnabled: true,
         elements: [],
         style: [{
             selector: 'edge',
